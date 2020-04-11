@@ -1,0 +1,271 @@
+<html>
+    <head>
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="jquery-3.2.1.min.js"></script>
+
+<style>
+    
+
+body {
+  background: #C5E1A5;
+}
+form {
+  width: 60%;
+  margin: 60px auto;
+  background: #efefef;
+  padding: 60px 120px 80px 120px;
+  text-align: center;
+  -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+}
+label {
+  display: block;
+  position: relative;
+  margin: 40px 0px;
+}
+.label-txt {
+  position: absolute;
+  top: -1.6em;
+  padding: 10px;
+  font-family: sans-serif;
+  font-size: .8em;
+  letter-spacing: 1px;
+  color: rgb(120,120,120);
+  transition: ease .3s;
+}
+.input {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.line-box {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: #BCBCBC;
+}
+
+.line {
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #8BC34A;
+  transition: ease .6s;
+}
+
+.input:focus + .line-box .line {
+  width: 100%;
+}
+
+.label-active {
+  top: -3em;
+}
+
+#submit {
+  display: inline-block;
+  padding: 12px 24px;
+  background: rgb(220,220,220);
+  font-weight: bold;
+  color: rgb(120,120,120);
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: ease .3s;
+}
+
+#submit:hover {
+  background: #8BC34A;
+  color: #ffffff;
+}
+</style>
+    </head>
+    <body>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAtXKAe_4B1Zn5SkCTaBhkTNJCIh1Nwdyw",
+    authDomain: "e-commerce-42816.firebaseapp.com",
+    databaseURL: "https://e-commerce-42816.firebaseio.com",
+    projectId: "e-commerce-42816",
+    storageBucket: "e-commerce-42816.appspot.com",
+    messagingSenderId: "394261214383",
+    appId: "1:394261214383:web:49b0b9e3ea2880d67c905a",
+    measurementId: "G-CD29WTRGNB"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  let formMessage = firebase.database().ref('register');
+
+
+
+            function putdata(){
+                let newformmessage= formMessage.push();
+
+                    var firstName=document.getElementById("firstname").value;
+                    var lastName=document.getElementById("lastname").value;
+                    var userName=document.getElementById("username").value;
+                    var mailId=document.getElementById("mailid").value;
+                    var passWord=document.getElementById("password").value;
+                    var phoneNum=document.getElementById("phone").value
+                    var DOB=document.getElementById("dob").value;
+                    var genDer=document.getElementById("gender").value;
+
+                    if((firstName!='')&&(lastName!='')&&(userName!='')&&(mailId!='')&&(passWord!='')&&(phoneNum!='')&&(DOB!='')&&(genDer!='')){
+                
+
+                var check=newformmessage.set({
+                    firstname:firstName,
+                    lastname:lastName,
+                    username:userName,
+                    mailid:mailId,
+                    password:passWord,
+                    phone:phoneNum,
+                    dob:DOB,
+                    gender:genDer,
+                    
+               
+                });
+                getdata();
+                
+                }}
+                
+                
+function getdata(){
+firebase.database().ref('register').once('value',   function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {
+    var childKey = childSnapshot.key;
+    var childData = childSnapshot.val();
+    document.getElementById("data").innerHTML=childData['username']+","+childData['password'];
+    console.log(childData['username']+","+childData['password']);
+    
+  });
+});
+}
+
+                
+
+                
+               
+            
+
+            function successMsg()
+            {
+                document.getElementById("data").innerHTML="Registered Successfully!"
+            }
+
+            /*function getdata(){
+                formMessage.once('value',function(snapshot)
+                {
+                    snapshot.forEach(function(childSnapshot)
+                    {
+                        var childkey=childSnapshot.key;
+                        var childvalue=childSnapshot.val();
+                        document.getElementById("data").innerHTML="Hello "+childvalue['firstname']+" "+childvalue['lastname'];
+                    })
+
+               
+                })
+                
+                
+            }*/
+            
+          </script>
+    <form  onsubmit="putdata()">   
+        <p id="data"></p> 
+           <h3>ORDER YOURSELF</h3>
+        <label>
+        <p class="label-txt">YOUR FIRSTNAME</p>
+        <input type="text" class="input" id="firstname" required/>
+        <div class="line-box">
+            <div class="line"></div>
+          </div>
+        </label>
+        <label>
+            <p class="label-txt">YOUR LASTNAME</p>
+        <input type="text" class="input" id="lastname" required/>
+        <div class="line-box">
+            <div class="line"></div>
+          </div>
+        </label>
+        <label>
+            <p class="label-txt">YOUR USERNAME</p>
+        <input type="text" class="input" id="username" required/>
+        <div class="line-box">
+            <div class="line"></div>
+          </div>
+        </label>
+        <label>
+            <p class="label-txt">YOUR MAIL ID</p>
+        <input type="email" class="input" id="mailid" required/>
+        <div class="line-box">
+            <div class="line"></div>
+          </div>
+    </label>
+    <label>
+        <p class="label-txt">YOUR PASSWORD</p>
+        <input type="password" class="input" id="password" required/>
+        <div class="line-box">
+            <div class="line"></div>
+          </div>
+    </label>
+    <label>
+        <p class="label-txt">CONFIRM YOUR PASSWORD</p>
+        <input type="password" class="input" id="cpassword" required/>
+        <div class="line-box">
+            <div class="line"></div>
+          </div>
+    </label>
+    <label>
+        <p class="label-txt">YOUR CONTACT NUMBER</p>
+        <input type="text" class="input" id="phone" required/><br>
+        <div class="line-box">
+            <div class="line"></div>
+          </div>
+    </label>
+    <label>
+        <p class="label-txt">YOUR DATE OF BIRTH</p>
+        <input type="date" class="input" id="dob" required/>
+        <div class="line-box">
+            <div class="line"></div>
+          </div>
+    </label>
+    <label>
+        <p class="label-txt">SELECT YOUR GENDER</p>
+        <select class="input" id="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="others">others</option>
+        </select>
+    </label>
+    
+       
+        <input type="submit" onclick="msg()" value="Submit" id="submit"/>
+        <p id="data"></p>
+        <p>Have an account already?
+          <a href="firebaseWebLogin/index.html">LOGIN</a></p>
+        
+    </form>
+    
+ 
+    </body>
+</html>
+

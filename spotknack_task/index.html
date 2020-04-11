@@ -1,0 +1,799 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script>
+          function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+  
+}
+
+function check()
+{
+    var meat=document.getElementById("meat");
+    if(meat.checked== true)
+    {
+      document.getElementById("div4").style.display="block";
+      document.getElementById("div6").style.display="block";
+      document.getElementById("div7").style.display="block";
+      document.getElementById("div9").style.display="block";
+      document.getElementById("div21").style.display="block";
+      document.getElementById("div22").style.display="block";
+      document.getElementById("div23").style.display="block";
+      document.getElementById("div34").style.display="block";
+      document.getElementById("div37").style.display="block";
+      document.getElementById("div105").style.display="block";
+      document.getElementById("div101").style.display="block";
+      document.getElementById("div45").style.display="block";
+      document.getElementById("div41").style.display="block";
+      document.getElementById("div44").style.display="block";
+      
+     
+     
+      
+      
+    }
+    if(meat.checked== false)
+    {
+      document.getElementById("div4").style.display="none";
+      document.getElementById("div6").style.display="none";
+      document.getElementById("div7").style.display="none";
+      document.getElementById("div9").style.display="none";
+      document.getElementById("div21").style.display="none";
+      document.getElementById("div22").style.display="none";
+      document.getElementById("div23").style.display="none";
+      document.getElementById("div34").style.display="none";
+      document.getElementById("div37").style.display="none";
+      document.getElementById("div105").style.display="none";
+      document.getElementById("div101").style.display="none";
+      document.getElementById("div45").style.display="none";
+      document.getElementById("div41").style.display="none";
+      document.getElementById("div44").style.display="none";
+    }
+}
+
+function checker()
+{
+  var vegan=document.getElementById("vegan");
+  if(vegan.checked==true)
+  {
+    document.getElementById("div1").style.display="block";
+      document.getElementById("div5").style.display="block";
+      document.getElementById("div0").style.display="block";
+      document.getElementById("div8").style.display="block";
+      document.getElementById("div3").style.display="block";
+      document.getElementById("div24").style.display="block";
+      document.getElementById("div25").style.display="block";
+      document.getElementById("div26").style.display="block";
+      document.getElementById("div27").style.display="block";
+      document.getElementById("div28").style.display="block";
+      document.getElementById("div31").style.display="block";
+      document.getElementById("div32").style.display="block";
+      document.getElementById("div33").style.display="block";
+      document.getElementById("div35").style.display="block";
+      document.getElementById("div36").style.display="block";
+      document.getElementById("div102").style.display="block";
+      document.getElementById("div103").style.display="block";
+      document.getElementById("div104").style.display="block";
+      document.getElementById("div42").style.display="block";
+      document.getElementById("div43").style.display="block";
+      document.getElementById("div45").style.display="block";
+      document.getElementById("div46").style.display="block";
+      document.getElementById("div47").style.display="block";
+      document.getElementById("div106").style.display="block";
+      document.getElementById("div107").style.display="block";
+  }
+  if (vegan.checked==false){
+    document.getElementById("div1").style.display="none";
+      document.getElementById("div5").style.display="none";
+      document.getElementById("div0").style.display="none";
+      document.getElementById("div8").style.display="none";
+      document.getElementById("div3").style.display="none";
+      document.getElementById("div24").style.display="none";
+      document.getElementById("div25").style.display="none";
+      document.getElementById("div26").style.display="none";
+      document.getElementById("div27").style.display="none";
+      document.getElementById("div28").style.display="none";
+      document.getElementById("div31").style.display="none";
+      document.getElementById("div32").style.display="none";
+      document.getElementById("div33").style.display="none";
+      document.getElementById("div35").style.display="none";
+      document.getElementById("div36").style.display="none";
+      document.getElementById("div102").style.display="none";
+      document.getElementById("div103").style.display="none";
+      document.getElementById("div104").style.display="none";
+      document.getElementById("div42").style.display="none";
+      document.getElementById("div43").style.display="none";
+      document.getElementById("div45").style.display="none";
+      document.getElementById("div46").style.display="none";
+      document.getElementById("div47").style.display="none";
+      document.getElementById("div106").style.display="none";
+      document.getElementById("div107").style.display="none";
+  }
+}
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+function dragEnd(ev)
+{
+    document.getElementById(ev.target.id).id="div2";
+    var im=document.getElementById("div2");
+    
+    
+}
+
+
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+   
+    ul = document.getElementById("b1") 
+    li = ul.getElementsByTagName("div");
+    for (i = 0; i < li.length; i++) {
+        a = li[i];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+    ul = document.getElementById("b2") 
+    li = ul.getElementsByTagName("div");
+    for (i = 0; i < li.length; i++) {
+        a = li[i];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+    ul = document.getElementById("b3") 
+    li = ul.getElementsByTagName("div");
+    for (i = 0; i < li.length; i++) {
+        a = li[i];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+    ul = document.getElementById("b4") 
+    li = ul.getElementsByTagName("div");
+    for (i = 0; i < li.length; i++) {
+        a = li[i];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+    ul = document.getElementById("b5") 
+    li = ul.getElementsByTagName("div");
+    for (i = 0; i < li.length; i++) {
+        a = li[i];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+        </script>
+        <style>
+
+.containerTab {
+  padding: 20px;
+  color: black;
+}
+
+.columnnn {
+  float: left;
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+  color: black;
+  border: none;
+  outline: none;
+  background-color: white;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+ 
+  clear: both;
+}
+
+/* Closable button inside the container tab */
+.closebtn {
+  float: right;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+          .demo-non-form {
+    color: initial;
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    font-family: arial, verdana, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+}
+
+.external-container button.external-button {
+    font-weight: 400;
+    padding: 10px;
+    margin: 6px 0 13px 0;
+    width: 100%;
+}
+
+#div11{
+  font-size: 15px;
+}
+
+#date{
+  border: none;
+  outline: none;
+}
+            body{
+                background: #D4E6D4;
+            }
+            .styly {
+                width: 60%;
+                margin: 60px auto;
+                background: #efefef;
+                padding: 260px 180px ;
+                text-align: center;
+                -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+                box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+            }
+           
+        </style>
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+            
+            /* Create two equal columns that floats next to each other */
+            .column {
+              float: left;
+              width: 70%;
+              padding: 10px;
+              height: 500px;
+              border-radius: 5px;
+              margin-top: 60px; 
+              font-family: Comic Sans, Comic Sans MS, cursive;/* Should be removed. Only for demonstration */
+            }
+            .column1 {
+              float: left;
+              width: 20%;
+              margin-left: 60px;
+              padding: 10px;
+              height: 500px;
+              border-radius: 5px;
+              margin-top: 60px; 
+              font-family: Comic Sans, Comic Sans MS, cursive;
+              line-height: 1px;/* Should be removed. Only for demonstration */
+            }
+
+            .column2 {
+              float: left;
+              width: 50%;
+              padding: 10px;
+              height: 500px;
+              border-radius: 5px;
+             
+              font-family: Comic Sans, Comic Sans MS, cursive;/* Should be removed. Only for demonstration */
+            }
+
+            .column3 {
+              float: right;
+              width: 40%;
+              padding: 10px;
+              height: 500px;
+              border-radius: 5px;
+              margin-left: 80px;
+              font-family: Comic Sans, Comic Sans MS, cursive;/* Should be removed. Only for demonstration */
+            }
+            
+            /* Clear floats after the columns */
+            
+            #createMeal{
+              background-color: rgb(95, 202, 113);
+              width: 200px;
+              height:40px;
+              border-radius: 5px;
+              display: inline-block;
+               padding: 12px 24px;
+               color:white;
+               border: none;
+                outline: none;
+                font-family: Comic Sans, Comic Sans MS, cursive;
+              
+            }
+            #search{
+              width:400px;
+              height:30px;
+              border-radius: 10px;
+          
+ 
+  padding: 10px;
+  background: transparent;
+  border: 1px solid #dddcdc;
+  outline: none;
+}
+                        img{
+              border-radius: 50%;
+              max-width:150px;
+              max-height:70px;
+            }
+
+            .switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+#switcher{
+  position: relative;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 0px;
+  bottom: 0px;
+  top: 0px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(122, 201, 148);;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(122, 201, 148);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 20px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+            #logout{
+              border-radius:50%;
+              max-width:100px;
+              max-height:30px;
+            }
+
+            #hello{
+              font-family: Comic Sans, Comic Sans MS, cursive;
+            }
+
+  .scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.scrollmenu div {
+  
+  color: black;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.sliding {
+  display: inline;
+  text-align: center;
+}
+
+ #indian #all #Cajun #Chinese #Thai #Italian #greek{
+  display: inline-block;
+  width: 25%;
+  padding: .75rem 0;
+  margin: 0;
+  text-decoration: none;
+  color: #333;
+}
+
+.two:hover ~ hr {
+  margin-left: 25%;
+}
+
+.three:hover ~ hr {
+  margin-left: 50%;
+}
+
+.four:hover ~ hr {
+  margin-left: 75%;
+}
+
+hr {
+  height: .25rem;
+  width: 25%;
+  margin: 0;
+  background: tomato;
+  border: none;
+  transition: .3s ease-in-out;
+}
+
+
+  .classy{
+    position: relative;
+    line-height:30px;
+      }
+    a {
+     
+      color:#857f7f;
+     font-size: 15px;
+      text-decoration: none;
+    
+    }
+    a:hover{
+        border-radius: 55px;
+        background-color: rgb(255, 255, 255);
+              width: 200px;
+              height:50px ;
+              margin-top: 0px;
+            
+              display: inline-block;
+               padding: 12px 24px;
+               color:black;
+               border: none;
+                outline: none;
+                font-family: Comic Sans, Comic Sans MS, cursive;
+    }
+
+    * width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+    #first{
+      list-style: none;
+    }
+    .box {
+  width: 400px;
+  height: 70px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  border-radius: 10px;
+}
+#div2 {
+  width: 300px;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  border-radius: 10px;
+  font-size: 11px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.box img{
+  border-radius: 5px;
+}
+#div2 img{
+  border-radius: 5px;
+  width:50px;
+   height:30px;
+
+}
+#div11 #div12 #div13{
+  width: 300px;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  border-radius: 10px;
+  font-size: 11px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+
+  
+            </style>
+           
+    </head>
+    <body>
+
+    
+    
+       
+    <div class="row">
+      <div class="column1" style="background-color:rgb(238, 235, 235);">
+        
+          <h3 id="hello">Hello</h3>
+          <p>Your Plan:</p>
+       <center> <button id="createMeal">Create New Meal +</button></center>
+      
+          <ul id="first" >
+            <li class="classy">MENU</li>
+            <li class="classy"><a href="#">Overview</a></li>
+            <li class="classy"><a href="#">Meals</a></li>
+            <li class="classy"><a href="#">User Account</a></li>
+            <li class="classy"><a href="#">Order History</a></li>
+            <li class="classy"><a href="#">Calender</a></li>
+          </ul>
+
+          <ul id="first">
+            <li class="classy">COMMUNITY</li>
+            <li class="classy"><a href="#">Reviews</a></li>
+            <li class="classy"><a href="#">User Recipes</a></li>
+          </ul>
+          <footer>
+            <a onclick="logout()"><center><section><img id="logout" src="download.png"></section></a>
+            <section><p>logout</p></section>
+          </center>
+          </footer>
+        
+      </div>
+      <div class="column" style="background-color:rgb(255, 255, 255);">
+        <div class="column2">
+        <input type="text" placeholder="search" onchange="myFunction()" id="search" />   <br> <br>
+        <strong><label>Today's option</label><br></strong>
+        <label>Drag and drop items to your list</label>
+        
+          <div class="scrollmenu ">
+            <ul>
+          
+          <li id="indian" class="sliding two"><button class="columnnn " onclick="openTab('b1');" >
+            Indian
+          </button></li>
+          <li id="Greek" class="sliding three"><button class="columnnn" onclick="openTab('b2');" >
+            Greek
+          </button></li>
+          <li id="Italian" class="sliding four"><button class="columnnn" onclick="openTab('b3');" >
+             Italian
+            </button></li>
+            <li id="Thai" class="sliding five"><button class="columnnn" onclick="openTab('b4');" >
+            Thai
+          </button></li>
+          
+          <li id="Chinese" class="sliding six"> 
+          <button class="columnnn" onclick="openTab('b5');" >
+            Chinese
+          </button></li>
+          
+        </ul>
+        </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="b5" class="containerTab" style="width:500px;display:none;height:300px;overflow-y: auto;">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+          <div id="div21" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/chinese/chickenlollypop.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Chicken Lollylop</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="1p" style="float:right;">$5.99</label></div><br>
+          <div id="div22" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/chinese/gingerchicken.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Ginger Chicken</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="2p" style="float:right;">$2.30</label></div><br>
+          <div id="div23" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/chinese/meal-box.jpg" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Meal Box</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="3p" style="float:right;">$4.99</label></div><br>
+          <div id="div24" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/chinese/nvnoodles.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Non veg Noodles</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="4p" style="float:right;">$1.15</label></div><br>
+          <div id="div25" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/chinese/vegcrispe.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Veg Crispe</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="5p" style="float:right;">$5.00</label></div><br>
+          <div id="div26" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/chinese/vegfriedrice.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Veg Fried Rice</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="6p"style="float:right;">$6.99</label></div><br>
+          <div id="div27" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"  ><img src="img/chinese/vegmachurian.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Veg Manchurian</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="7p" style="float:right;">$3.00</label></div><br>
+          <div id="div28" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/chinese/vegnoodle.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Veg Noodle</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="8p" style="float:right;">$4.50</label></div><br>
+          
+        </div>
+
+        <div id="b2" class="containerTab" style="width:500px;display:none;height:300px;overflow-y: auto;">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+          <div id="div31" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/greek/baklava.jpg" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Baklava</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$5.99</label></div><br>
+          <div id="div32" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/greek/courgette-fritter.jpg" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>courgettefrit</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$2.30</label></div><br>
+          <div id="div33" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/greek/feta2.jpg" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Feta</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$4.99</label></div><br>
+          <div id="div34" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/greek/grilled-lamb.jpg" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Grilled lamb</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$1.15</label></div><br>
+          <div id="div35" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/greek/moussaka.jpg" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Mousaakka</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$5.00</label></div><br>
+          <div id="div36" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/greek/taramasalata.jpg" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>taramasalata</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$6.99</label></div><br>
+          <div id="div37" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"  ><img src="img/greek/whole-roast-fish.jpg" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Roasted fish</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;"></label>$3.00</label></div><br>
+          
+          
+        </div>
+       
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <!-- Full-width columns: (hidden by default) -->
+        <div id="b1" class="containerTab" style="width:500px;height:300px;overflow-y: auto;">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+          <div id="div1" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/veg1.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Chana Masala</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$5.99</label></div><br>
+          <div id="div3" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/masalapasta.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Masala Pasta</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$2.30</label></div><br>
+          <div id="div4" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/wings.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Chicken Wings</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label  style="float:right;">$4.99</label></div><br>
+          <div id="div5" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/aloogobi.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Aloo Gobi</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$1.15</label></div><br>
+          <div id="div6" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/tandoori.jpg" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Tandoori Chicken</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$5.00</label></div><br>
+          <div id="div7" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/grill.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Grill</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$6.99</label></div><br>
+          <div id="div8" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"  ><img src="img/bakedpakora.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Baked Pakoda</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$3.00</label></div><br>
+          <div id="div9" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/65.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Chicken 65</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$4.50</label></div><br>
+          <div id="div0" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/panneer.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Panneer Gravy</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$5.99</label></div><br>
+        </div>
+        
+
+
+
+
+        <div id="b3" class="containerTab" style="width:500px;display:none;height:300px;overflow-y: auto;">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+          <div id="div101" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/italian/1486652910-easy-chicken-parmp1.jpg" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Chicken Parmp</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$5.99</label></div><br>
+          <div id="div102" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/italian/chicken-marshala.jpg" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Marshala</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$2.30</label></div><br>
+          <div id="div103" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/italian/delish-190606-flatbread-pizza-432-portrait-pf-1560544301.jpg" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>bread Pizza</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$4.99</label></div><br>
+          <div id="div104" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/italian/delish-190731-air-fryer-pizza-0188-portrait-pf-1565820597.jpg" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Frier Pizza</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$1.15</label></div><br>
+          <div id="div105" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/italian/delish-191907-chicken-meatballs-0323-portrait-1565386516.jpg" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>MeatBalls</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$5.00</label></div><br>
+          <div id="div106" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/italian/pasta-fagioli-delish-1544049102.jpg" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Pasta </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$6.99</label></div><br>
+          <div id="div107" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"  ><img src="img/italian/singleimagebug-pasta-puttanesca-pin-1549421288.jpg" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Puttanesca</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$3.00</label></div><br>
+          
+          
+        </div>
+
+        <div id="b4" class="containerTab" style="width:500px;display:none;height:300px;overflow-y: auto;">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+          <div id="div41" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/thai/fishfry.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Fish fry</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$5.99</label></div><br>
+          <div id="div42" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/thai/friedrice.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Friedrice</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;"> $2.30</label></div><br>
+          <div id="div43" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/thai/pasta.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Pasta</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$4.99</label></div><br>
+          <div id="div44" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/thai/prawn fried rice.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Prawn fried rice</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$1.15</label></div><br>
+          <div id="div45" class="box" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><img src="img/thai/prawn.jfif" width="70px" height="45px" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;<label>Prawn</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="float:right;">$5.00</label></div><br>
+          
+          
+        </div>
+
+
+
+
+
+
+        
+        </div>
+        
+       
+        <div class="column3" style="overflow-y: auto;height:450px">
+          <label id="switcher" style="text-align: bottom;">Meat</label>
+        <label class="switch">
+          <input type="checkbox" id="meat"  onclick="check()" checked>
+          <span class="slider round"></span>
+        </label>
+        <label id="switcher"style="text-align: bottom;" >Vegan</label>&nbsp;&nbsp;&nbsp;<span>
+        <label class="switch">
+          <input type="checkbox" id="vegan" onclick ="checker()"checked >
+          <span class="slider round"></span>
+        </label></span><br><br>
+        create your plan meal<br>
+        <label>for</label>
+        <input type="date" id="date" data-role="calendar"><br>
+        
+        <div id="div11" ondrop="drop(event)" ondragover="allowDrop(event)">Breakfast</div><br><br>
+        <div id="div12" ondrop="drop(event)" ondragover="allowDrop(event)">Lunch</div><br><br>
+        <div id="div13" ondrop="drop(event)" ondragover="allowDrop(event)">Dinner</div>
+
+
+        <div id="createMeal" onclick=save() style="margin-top:200px;margin-left: 50px;text-align: center;" >Save Items </div>
+          
+      </div>
+    </div>
+
+   
+            
+           
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+        <script>
+         var firebaseConfig = {
+          apiKey: "AIzaSyAtXKAe_4B1Zn5SkCTaBhkTNJCIh1Nwdyw",
+          authDomain: "e-commerce-42816.firebaseapp.com",
+          databaseURL: "https://e-commerce-42816.firebaseio.com",
+          projectId: "e-commerce-42816",
+          storageBucket: "e-commerce-42816.appspot.com",
+          messagingSenderId: "394261214383",
+          appId: "1:394261214383:web:49b0b9e3ea2880d67c905a",
+          measurementId: "G-CD29WTRGNB"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        </script>
+        <script src="firebaseWebLogin/index.js"></script>
+    </body>
+</html>

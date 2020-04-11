@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="jquery-3.2.1.min.js"></script>
+<body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+
+<script>
+// Your web app's Firebase configuration
+var firebaseConfig = {
+apiKey: "AIzaSyAtXKAe_4B1Zn5SkCTaBhkTNJCIh1Nwdyw",
+authDomain: "e-commerce-42816.firebaseapp.com",
+databaseURL: "https://e-commerce-42816.firebaseio.com",
+projectId: "e-commerce-42816",
+storageBucket: "e-commerce-42816.appspot.com",
+messagingSenderId: "394261214383",
+appId: "1:394261214383:web:49b0b9e3ea2880d67c905a",
+measurementId: "G-CD29WTRGNB"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+let formMessage = firebase.database().ref('register');
+
+
+
+               
+                var userName=document.getElementById("username").value;
+                
+                var passWord=document.getElementById("password").value;
+                
+
+                
+            
+            
+function getdata(){
+firebase.database().ref('register').once('value',   function(snapshot) {
+snapshot.forEach(function(childSnapshot) {
+var childKey = childSnapshot.key;
+var childData = childSnapshot.val();
+document.getElementById("data").innerHTML=childData['username']+","+childData['password'];
+console.log(childData['username']+","+childData['password']);
+
+});
+});
+}
+
+            
+
+            
+           
+        
+
+        function successMsg()
+        {
+            document.getElementById("data").innerHTML="Registered Successfully!"
+        }
+
+        /*function getdata(){
+            formMessage.once('value',function(snapshot)
+            {
+                snapshot.forEach(function(childSnapshot)
+                {
+                    var childkey=childSnapshot.key;
+                    var childvalue=childSnapshot.val();
+                    document.getElementById("data").innerHTML="Hello "+childvalue['firstname']+" "+childvalue['lastname'];
+                })
+
+           
+            })
+            
+            
+        }*/
+        
+      </script>
+<form  onsubmit="putdata()">   
+    <p id="data"></p> 
+       <h3>ORDER YOURSELF</h3>
+    
+    <label>
+        <p class="label-txt">YOUR USERNAME</p>
+    <input type="text" class="input" id="username" required/>
+    <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    
+<label>
+    <p class="label-txt">YOUR PASSWORD</p>
+    <input type="password" class="input" id="password" required/>
+    <div class="line-box">
+        <div class="line"></div>
+      </div>
+</label>
+
+
+    <input type="submit" onclick="msg()" value="Submit" id="submit"/>
+    
+    
+</form>
+
+
+</body>
+</html>
+
